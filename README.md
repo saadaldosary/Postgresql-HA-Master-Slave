@@ -22,6 +22,7 @@ This Method allows for near-real-time replication of data. This means that if on
 ### Components 
 1. One Primary psql database server.
 2. One Secondray psql database server.
+
 PS: this procedures uses fedora based system. you can modify it to work for other linux flavors 
 ### Steps:
 **On Primary Server**   
@@ -73,8 +74,7 @@ systemctl start postgresql.service
 **On Standby Server** 
 6. Run postgres_installation.sh script
 ```
-sudo yum module install postgresql-server -y 
-sudo postgres-setup initdb 
+sudo yum install postgresql* -y 
 ```
 7. Using ```pg_basebackup``` command to sync database from primary db to the standby db:
 ```
